@@ -14,9 +14,9 @@ Pod::Spec.new do |s|
   s.requires_arc = false
   s.resources = "iphone/res/{zbar-*.png,zbar-help.html}"
   s.xcconfig = {
-    "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*]": "ZBarReaderViewImpl_Simulator.m",
-    "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*]": "ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m",
-    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) NDEBUG=1"
+    "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*]"=> "ZBarReaderViewImpl_Simulator.m",
+    "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*]"=> "ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m",
+    "GCC_PREPROCESSOR_DEFINITIONS"=> "$(inherited) NDEBUG=1"
   }
   s.libraries = "iconv"
   s.prefix_header_file = "iphone/include/prefix.pch"
