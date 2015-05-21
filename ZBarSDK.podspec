@@ -13,9 +13,11 @@ Pod::Spec.new do |s|
 
   s.requires_arc = false
   s.resources = "iphone/res/{zbar-*.png,zbar-help.html}"
-  s.xcconfig = { "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*]": "ZBarReaderViewImpl_Simulator.m",
-  "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*]": "ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m",
-    "GCC_PREPROCESSOR_DEFINITIONS": "NDEBUG=1" }
+  s.xcconfig = {
+    "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*]": "ZBarReaderViewImpl_Simulator.m",
+    "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*]": "ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m",
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) NDEBUG=1"
+  }
   s.libraries = "iconv"
   s.prefix_header_file = "iphone/include/prefix.pch"
   s.compiler_flags = "-w"
@@ -23,5 +25,5 @@ Pod::Spec.new do |s|
   s.libraries = "iconv"
   s.public_header_files = "iphone/**/**/*.h", "include/*.h"
   s.description = "ZBar is an open source software suite for reading bar codes from various sources, such as video streams, image files and raw intensity sensors. It supports many popular symbologies (types of bar codes) including EAN-13/UPC-A, UPC-E, EAN-8, Code 128, Code 39, Interleaved 2 of 5 and QR Code."
-  
+
 end
